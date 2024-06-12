@@ -13,24 +13,21 @@
                 <div class="col-md-8">
                     <input type="text" class="form-control mb-3" placeholder="Search for jobs">
                     <div class="list-group">
-                        <a href="<?php echo BASEURL; ?>/Detailjob" class="list-group-item list-group-item-action">
-                            <div class="d-flex justify-content-between">
-                                <h5 class="mb-1">Freelance Graphic Design Application</h5>
-                                <small>3 hours ago</small>
+                        <?php foreach ($data['jobs'] as $job) : ?>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $job["job_tittle"]; ?></h5>
+                                    <p class="card-text"><?= $job["company"]; ?></p>
+                                    <p class="card-text"><?= $job["location"]; ?></p>
+                                    <p class="card-text"><?= $job["description"]; ?></p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9dqdfnFbjvhUAztzPlr21SxQXcre6nq062ilndLTKw6yrYA/viewform?usp=pp_url" class="btn btn-primary">Apply for this position</a>
+                                </div>
                             </div>
-                            <p class="mb-1">Firebelly Design</p>
-                            <small>Chicago, IL</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex justify-content-between">
-                                <h5 class="mb-1">Brand/UX Designer for 2 Jewelry Brands</h5>
-                                <small>8 hours ago</small>
-                            </div>
-                            <p class="mb-1">Hearts On Fire</p>
-                            <small>Remote</small>
-                        </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
+
+
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-header">Job Categories</div>

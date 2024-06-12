@@ -8,6 +8,8 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/css/styleakun.css"">
 </head>
+
+
 <body>
   <main class="main-content mt-0">
     <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="  background: linear-gradient(334deg, #a3bcef, #f8deff, #a3bcef); background-size: 180% 180%; animation: gradient-animation 6s ease infinite;">

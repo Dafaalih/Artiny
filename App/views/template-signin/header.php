@@ -23,5 +23,8 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
             </nav>
+            <div>
+                <a href="<?= BASEURL ?>/Signup" class="btn btn-primary">Log Out </a>
+            </div>
         </div>
     </header>

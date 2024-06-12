@@ -19,8 +19,7 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo BASEURL; ?>/Home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Inspirasi">Inspiration</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Job">Job</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Aboutus">About</a></li>
                 </ul>
             </nav>
             <div>

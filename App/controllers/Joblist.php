@@ -1,12 +1,10 @@
 <?php
-class Detailjob extends Controller {
+class Joblist extends Controller {
     public function index()
     {
         $data["judul"] = "Artiny";
-    $data["jobs"] = $this->model("JobModel")->getAllList(); // Fetch jobs from the model
-    $this->view("template/header", $data);
-    $this->view("jobs/detail-job/index", $data);
-    $this->view("template/footer");
+        $data['jobs'] = $this->model("JobModel")->getAllList();
+        $this->view("jobs/list/job", $data['jobs']);
     }
     
     public function tambahData()
