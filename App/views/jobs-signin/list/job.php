@@ -4,6 +4,7 @@
         <div class="container">
             <h1>The #1 job board for graphic design jobs</h1>
             <p>Discover the best graphic design jobs, handpicked just for you.</p>
+            <a href="<?= BASEURL ?>/Jobform" class="btn btn-outline-light">Add Job</a>
         </div>
     </section>
     <section class="job-board py-5">

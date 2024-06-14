@@ -1,5 +1,5 @@
 <?php
-class InspirasiModel {
+class DesignerModel {
     private $table = 'inspirasi';
     private $db;
 

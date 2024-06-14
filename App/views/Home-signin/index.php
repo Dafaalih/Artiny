@@ -84,13 +84,13 @@
 }
 
 </style>
+
 <!-- Hero Section -->
     <section class="hero bg-light py-5">
         <div class="container text-center">
             <img src="./img/artiny.png" alt="" style="widht: 80px; height:80px; margin-bottom:20px;">
             <h1>Uncover the leading designers and creative talents shaping the world today.</h1>
             <p>Artiny is the global community for designers and creative professionals.</p>
-            <a href="<?= BASEURL ?>/signup" class="btn btn-outline-light">Get Started</a>
         </div>
 
     </section>

@@ -71,6 +71,7 @@
         <div class="container">
             <h1>The #1 job board for graphic design jobs</h1>
             <p>Discover the latest and coolest design trends on Artiny.</p>
+            <a href="<?= BASEURL ?>/Inspirasiform" class="btn btn-outline-light">Add Design</a>
         </div>
     </section>
     <section class="filter-bar">
@@ -90,9 +91,21 @@
         </div>
         <button class="filter-btn">Filters</button>
     </section>
+    
+
     <section>
         <div class="pinterest-layout">
             <div class="pin" data-description="Gambar yang diunggah adalah poster untuk sebuah acara Block Party yang diadakan oleh Poster House. Poster ini memiliki desain yang sangat berwarna-warni dengan berbagai elemen grafis seperti mata, bibir, bintang, hati, dan berbagai bentuk geometris lainnya."><img src="./img/1.jpeg" alt="Image 1"></div>
+            <div class="pin" data-description="Description for Image 2"><img src="./img/2.jpeg" alt="Image 2"></div>
+            <div class="pin" data-description="Description for Image 3"><img src="./img/3.jpeg" alt="Image 3"></div>
+            <div class="pin" data-description="Description for Image 4"><img src="./img/4.jpeg" alt="Image 4"></div>
+            <div class="pin" data-description="Description for Image 5"><img src="./img/5.jpeg" alt="Image 5"></div>
+            <div class="pin" data-description="Description for Image 6"><img src="./img/6.jpeg" alt="Image 6"></div>
+            <div class="pin" data-description="Description for Image 7"><img src="./img/7.jpeg" alt="Image 7"></div>
+            <div class="pin" data-description="Description for Image 8"><img src="./img/8.jpeg" alt="Image 8"></div>
+            <div class="pin" data-description="Description for Image 9"><img src="./img/9.jpeg" alt="Image 9"></div>
+            <div class="pin" data-description="Description for Image 10"><img src="./img/10.jpeg" alt="Image 10"></div>
+            <div class="pin" data-description="Description for Image 1"><img src="./img/1.jpeg" alt="Image 1"></div>
             <div class="pin" data-description="Description for Image 2"><img src="./img/2.jpeg" alt="Image 2"></div>
             <div class="pin" data-description="Description for Image 3"><img src="./img/3.jpeg" alt="Image 3"></div>
             <div class="pin" data-description="Description for Image 4"><img src="./img/4.jpeg" alt="Image 4"></div>

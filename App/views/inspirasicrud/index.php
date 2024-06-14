@@ -3,94 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload</title>
+    <title>Landing Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
     <style>
-        .pinterest-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 16px;
-            padding: 16px;
+        body {
+            font-family: "Unbounded", sans-serif;
+            background: linear-gradient(334deg, #a3bcef, #f8deff, #a3bcef);
+            background-size: 180% 180%;
+            animation: gradient-animation 6s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
             justify-content: center;
+            align-items: center;
         }
 
-        .pin {
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .pin:hover {
-            transform: scale(1.05);
-        }
-
-        .pin img {
-            width: 100%;
-            display: block;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 900px;
+        }
+
+        h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: #333;
         }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
         }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            font-family: "Unbounded", sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 <main>
-    <section class="hero text-center">
-        <div class="container">
-            <h1>Upload Image with Description</h1>
-            <form action="index.php?action=upload" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" required>
-                <input type="text" name="description" placeholder="Image Description" required>
-                <button type="submit">Upload</button>
-            </form>
-        </div>
-    </section>
     <section>
-        <div class="pinterest-layout" id="imageContainer">
-            <?php foreach ($data['images'] as $image): ?>
-                <div class="pin" data-description="<?= htmlspecialchars($image['description']); ?>">
-                    <img src="uploads/<?= htmlspecialchars($image['filename']); ?>" alt="<?= htmlspecialchars($image['description']); ?>">
+        <div class="container">
+            <img src="<?= BASEURL; ?>/img/artiny.png" alt="Artiny Logo" style="width: auto; height:80px; margin-top:40px; margin-bottom:40px; display: block; margin-left: auto; margin-right: auto;">
+            <h2>Add New Inspiration</h2>
+            <form action="<?= BASEURL; ?>/Inspirasiform/tambahData" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="description">Job Description</label>
+                <textarea id="description" name="description" ins$inspirasis="4" required></textarea>
                 </div>
-            <?php endforeach; ?>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
         </div>
+        <div class="col-md-8" style="display: flex; justify-content: center; align-items: center;">
+    <div class="list-group">
+        <?php foreach ($data['inspirasi'] as $inspirasi) : ?>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-text"><?= $inspirasi["description"]; ?></p>
+                    <img src="<?= BASEURL ?>/img/<?= basename($inspirasi['gambar']); ?>" alt="gambar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal<?= $inspirasi['id']; ?>">Edit</button>
+                        <a href="<?= BASEURL; ?>/Inspirasiform/hapusData/<?= $inspirasi['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this inspiration?');">Delete</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+
+
+    <!-- Edit Modal -->
+    <?php foreach ($data['inspirasi'] as $inspirasi) : ?>
+        <div class="modal fade" id="editModal<?= $inspirasi['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Inspiration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="<?= BASEURL; ?>/Inspirasiform/editData/<?= $inspirasi['id']; ?>" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" class="form-control" ins$inspirasis="4" required><?= htmlspecialchars($inspirasi['description']); ?></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input type="file" id="image" name="image" accept="image/*">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
     </section>
 </main>
 
@@ -121,5 +172,8 @@
         }
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

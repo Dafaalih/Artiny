@@ -1,4 +1,5 @@
 <?php
+
 function parseEnv($filePath)
 {
     $contents = file_get_contents($filePath);
@@ -16,4 +17,4 @@ function parseEnv($filePath)
     return $env;
 }
 
-$_ENV = parseEnv("../App/.env");
+$_ENV = parseEnv("../app/.env");

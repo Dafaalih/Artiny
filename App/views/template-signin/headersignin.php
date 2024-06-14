@@ -16,16 +16,15 @@
             <img src="<?php echo BASEURL; ?>/img/artiny.png" alt="img" style="widht: 30px; height:30px;">
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo BASEURL; ?>/Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Inspirasi">Inspiration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Job">Job</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Aboutus">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo BASEURL; ?>/Homesignin">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Inspirasisignin">Inspiration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASEURL ?>/Jobsignin">Job</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
             </nav>
             <div>
-                <a href="<?= BASEURL ?>/Signin" class="btn btn-outline-primary">Login</a>
-                <a href="<?= BASEURL ?>/Signup" class="btn btn-primary">Sign up for Free</a>
+                <a href="<?= BASEURL ?>/Home" class="btn btn-primary">Log Out </a>
             </div>
         </div>
     </header>

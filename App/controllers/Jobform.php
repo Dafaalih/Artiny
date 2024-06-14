@@ -14,7 +14,7 @@ class Jobform extends Controller {
         } else {
             Flasher::setFlash('Data Job', 'gagal', 'ditambahkan', 'danger');
         }
-        header("Location:" . BASEURL . "/Job");
+        header("Location:" . BASEURL . "/Jobsignin");
         exit;
     }
 
@@ -30,7 +30,7 @@ class Jobform extends Controller {
         } else {
             Flasher::setFlash('Data Job', 'gagal', 'diubah', 'danger');
         }
-        header("Location:" . BASEURL . "/Job");
+        header("Location:" . BASEURL . "/Jobsignin");
         exit;
     }
 
@@ -41,7 +41,7 @@ class Jobform extends Controller {
         } else {
             Flasher::setFlash('Data Job', 'gagal', 'dihapus', 'danger');
         }
-        header("Location:" . BASEURL . "/Job");
+        header("Location:" . BASEURL . "/Jobsignin");
         exit;
     }
 }
